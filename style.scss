@@ -1,0 +1,97 @@
+$bg-color: hsl(236, 21%, 26%);
+$card-color: hsl(237, 18%, 59%);
+$font-color: hsl(269, 100%, 82%);
+$header-color: hsl(0, 0%, 100%);
+
+$fw: 700;
+$ff: "Red Hat Text", sans-serif;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+  background-color: $bg-color;
+  background-image: url(./launch-countdown-timer-main/images/bg-stars.svg);
+}
+
+.hills {
+  position: absolute;
+  bottom: 0;
+  height: 20vh;
+  width: 100vw;
+  background-image: url(./launch-countdown-timer-main/images/pattern-hills.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 4em;
+    cursor: pointer;
+  }
+}
+
+.title {
+  position: absolute;
+  top: 14vh;
+  left: 50vw;
+  transform: translateX(-50%);
+  text-align: center;
+  font-family: $ff;
+  font-weight: $fw;
+  color: $header-color;
+  font-size: 32px;
+  letter-spacing: 6px;
+}
+
+.content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  h1 {
+    background-color: $card-color;
+    border-radius: 6px;
+    height: 10vh;
+    width: 2.4em;
+    text-align: center;
+    line-height: 10vh;
+    color: $font-color;
+    font-weight: $fw;
+    font-family: $ff;
+    font-size: 3em;
+    margin: 0 0.2em;
+  }
+  p {
+    text-align: center;
+    padding-top: 1em;
+    color: $header-color;
+    font-family: $ff;
+    font-weight: $fw;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .title {
+    top: 6vh;
+  }
+  .content {
+    top: 30%;
+    transform: scale(0.8);
+    transform: translateX(-50%);
+    flex: 1;
+  }
+}
